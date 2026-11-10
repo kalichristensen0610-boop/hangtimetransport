@@ -1,5 +1,6 @@
 import React from 'react';
 import './mobile-navigation.css';
+import SiteHeader from './site-header';
 import { CoverageMap } from './coverage';
 import { FAQ } from './faq-content';
 import { ProcessIntro } from './move-guide';
@@ -21,7 +22,7 @@ function Navigation() {
 export function Frame({children}) {
   return <>
     <a className="skip" href="#main">Skip to content</a>
-    <header className="site-header"><div className="shell nav-row">
+    <SiteHeader><div className="shell nav-row">
       <Wordmark/>
       <div className="desktop-navigation"><Navigation/></div>
       <Button href="/quote/" priority>Get an estimate</Button>
@@ -29,7 +30,7 @@ export function Frame({children}) {
         <summary><span aria-hidden="true">☰</span> Menu</summary>
         <Navigation/>
       </details>
-    </div></header>
+    </div></SiteHeader>
     <main id="main">{children}</main>
     <footer className="site-footer"><div className="shell">
       <div className="footer-grid">

@@ -16,3 +16,19 @@
   .site-header .mobile-navigation .services-menu a{min-height:44px}
   main [id]{scroll-margin-top:72px}
 }
+@media(max-width:800px){
+  .site-header{transition:transform .23s ease}
+  .site-header[data-scrolled-away]:not(:has(:focus-visible,.mobile-navigation[open])){transform:translateY(-101%)}
+  .site-header .nav-row{width:calc(100% - 24px);gap:6px}
+  .site-header .wordmark img{width:clamp(108px,34vw,172px)}
+  .site-header .nav-row>.priority{font-size:clamp(13px,3.6vw,16px);padding-inline:10px;min-height:48px}
+  .site-header .nav-row>.priority span{display:none}
+  .mobile-navigation>summary{min-height:48px}
+  .site-header .mobile-navigation nav{left:auto;right:0;width:min(340px,100%);padding:10px;background:var(--surface);gap:5px}
+  .site-header .mobile-navigation nav>a,.mobile-navigation .services-menu>summary{padding:8px 12px;background:white;border:0;border-radius:5px}
+  .mobile-navigation .services-menu>summary::after{content:"+";margin-left:auto;font-size:19px}
+  .mobile-navigation .services-menu[open]>summary::after{content:"−"}
+  .mobile-navigation .services-menu>div{margin:5px 0 0 10px;padding:3px 0 3px 8px;background:transparent;border-left:2px solid var(--orange);border-radius:0}
+  .site-header .mobile-navigation .services-menu a{padding:8px 10px;font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.site-header{transition:none}}
