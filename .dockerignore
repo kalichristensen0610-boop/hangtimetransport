@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+.git
+gatsby/node_modules
+gatsby/.cache
+gatsby/public
