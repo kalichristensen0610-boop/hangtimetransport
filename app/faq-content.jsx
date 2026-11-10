@@ -1,5 +1,5 @@
 import React from 'react';
-import { prepKit } from './move-data';
+import { prepKit, travelCosts } from './move-data';
 import { Button, Kicker } from './move-tools';
 
 const questions = [
@@ -7,7 +7,8 @@ const questions = [
   ['How much does an interstate move cost per mile?', 'Full Service is $5.00 per mile, Hybrid is $4.50 per mile, and Economical is $3.50 per mile. Hourly labor is quoted separately for Full Service and Hybrid. With Economical, you provide the labor. The moving calculator shows an estimated transportation subtotal based on the driving miles you enter.'],
   ['What’s the difference between Full Service, Hybrid, and Economical?', 'With Full Service, we arrange packing, loading, unloading, and unpacking. With Hybrid, you can pack yourself and have a crew help load and unload, or talk to us about a different split. With Economical, you bring your own crew and we provide the truck and driver.'],
   ['How much weight can the moving truck carry?', 'We can load up to 8,000 pounds of cargo. Tell us about large furniture and heavy items when you share your move details so we can review your load.'],
-  ['What moving supplies are included?', `Each plan includes dollies, furniture blankets, shrink wrap, and moving tape. ${prepKit.timing}`],
+  ['What travel costs are included?', travelCosts],
+  ['What moving equipment and supplies are included?', `${prepKit.equipment} ${prepKit.timing}`],
   ['When will I receive instructions for packing and moving day?', 'After you book, we send your move guide one week before the move. It explains what to pack in duffel bags and bins, how to prepare your items, and what to expect on moving day.'],
   ['Do you handle local moves?', 'We review local moves case by case. Share your pickup and destination ZIP codes, preferred date, and move size so we can review your request.'],
   ['Do you move businesses as well as households?', 'Yes. We handle residential and commercial moves. Select Office or Commercial in the estimate form for help arranging a custom estimate call.'],

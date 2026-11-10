@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { plans, prepKit, rate } from './move-data';
+import { plans, prepKit, travelCosts, rate } from './move-data';
 
 export function Kicker({children}) { return <p className="kicker"><Ball/>{children}</p>; }
 
@@ -63,8 +63,8 @@ export function PlanPage() {
       <div><Kicker>INCLUDED IN EVERY PLAN</Kicker><h2>Get ready before the truck arrives.</h2><p className="lead">{prepKit.timing} You’ll also get a move guide with instructions for packing bins and duffel bags and getting ready for pickup.</p></div>
       <div>
         <details open><summary>What’s in the prep kit?</summary><p>Your kit includes shrink wrap and moving tape.</p></details>
-        <details><summary>What equipment is included?</summary><p>{prepKit.equipment} are included with every plan.</p></details>
-        <details><summary>What travel costs are included?</summary><p>Transportation includes fuel, meals, lodging, permits, and tolls.</p></details>
+        <details><summary>What equipment is included?</summary><p>{prepKit.equipment} {prepKit.timing}</p></details>
+        <details><summary>What travel costs are included?</summary><p>{travelCosts}</p></details>
         <details><summary>What should I do before pickup?</summary><p>Review your move guide and check who is handling prep and packing under your plan. If your timing changes, contact us so we can review your pickup schedule.</p></details>
       </div>
     </div></section>

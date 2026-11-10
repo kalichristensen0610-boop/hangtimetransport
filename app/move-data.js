@@ -6,6 +6,8 @@ export const plans = [
 export const rate = value => '$' + value.toFixed(2);
 
 export const prepKit = {
-  timing: 'We ship your prep kit to your home one week before your move.',
-  equipment: 'Hand and furniture dollies, furniture blankets, shrink wrap, and moving tape',
+  timing: 'Your prep kit arrives at your home one week before moving day.',
+  equipment: 'Every plan includes a prep kit with 25 totes, hand and furniture dollies, furniture blankets, shrink wrap, and moving tape.',
 };
+
+export const travelCosts = 'Travel costs such as fuel and tolls depend on the moving plan you choose. We’ll confirm which travel costs are covered when we review your move.';
