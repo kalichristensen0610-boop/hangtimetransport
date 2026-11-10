@@ -1,0 +1,18 @@
+.site-header .mobile-navigation{display:none}
+@media(max-width:800px){
+  .site-header{position:sticky;top:0;z-index:20}
+  .site-header .nav-row{position:relative;flex-wrap:nowrap;gap:7px;padding-block:9px}
+  .site-header .desktop-navigation{display:none}
+  .site-header .wordmark{margin-right:auto}
+  .site-header .wordmark img{width:clamp(82px,27vw,138px)}
+  .site-header .nav-row>.priority{font-size:12px;padding-inline:9px;gap:5px;min-height:44px;white-space:nowrap}
+  .site-header .mobile-navigation{display:block}
+  .mobile-navigation>summary{display:flex;align-items:center;justify-content:center;gap:5px;min-height:44px;padding-inline:8px;border:1px solid var(--midnight);border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;list-style:none}
+  .mobile-navigation>summary::-webkit-details-marker{display:none}
+  .mobile-navigation[open]>summary{background:var(--midnight);color:white}
+  .site-header .mobile-navigation nav{position:absolute;inset:100% 0 auto;display:grid;gap:0;width:auto;max-height:calc(100dvh - 72px);overflow:auto;padding:8px 14px;background:white;border:1px solid var(--rule);border-radius:8px;box-shadow:0 10px 26px #171d2526;font-size:15px}
+  .site-header .mobile-navigation nav>a,.mobile-navigation .services-menu>summary{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--rule)}
+  .mobile-navigation .services-menu>div{position:static;min-width:0;border:0;box-shadow:none;padding:0 0 0 10px}
+  .site-header .mobile-navigation .services-menu a{min-height:44px}
+  main [id]{scroll-margin-top:72px}
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './mobile-navigation.css';
 import { CoverageMap } from './coverage';
 import { FAQ } from './faq-content';
 import { ProcessIntro } from './move-guide';
@@ -13,10 +14,22 @@ const links = [['/services/','Services'],['/moving-plans/','Moving plans'],['/lo
 function Wordmark() {
   return <a className="wordmark" href="/" aria-label="Hang Time Transport home"><img src="/lane-wordmark.webp" alt="" width="138"/></a>;
 }
+function Navigation() {
+  return <nav aria-label="Main navigation"><details className="services-menu"><summary>Services</summary><div><a href="/services/">All moving services</a>{services.map(service=><a key={service.id} href={servicePath(service.id)}>{service.title}</a>)}</div></details>{links.filter(([path])=>path!=="/services/" && path!=="/long-distance-moving/").map(([path,label])=><a key={path} href={path}>{label}</a>)}</nav>;
+}
+
 export function Frame({children}) {
   return <>
     <a className="skip" href="#main">Skip to content</a>
-    <header className="site-header"><div className="shell nav-row"><Wordmark/><nav aria-label="Main navigation"><details className="services-menu"><summary>Services</summary><div><a href="/services/">All moving services</a>{services.map(service=><a key={service.id} href={servicePath(service.id)}>{service.title}</a>)}</div></details>{links.filter(([path])=>path!=="/services/" && path!=="/long-distance-moving/").map(([path,label])=><a key={path} href={path}>{label}</a>)}</nav><Button href="/quote/" priority>Get an estimate</Button></div></header>
+    <header className="site-header"><div className="shell nav-row">
+      <Wordmark/>
+      <div className="desktop-navigation"><Navigation/></div>
+      <Button href="/quote/" priority>Get an estimate</Button>
+      <details className="mobile-navigation">
+        <summary><span aria-hidden="true">☰</span> Menu</summary>
+        <Navigation/>
+      </details>
+    </div></header>
     <main id="main">{children}</main>
     <footer className="site-footer"><div className="shell">
       <div className="footer-grid">
